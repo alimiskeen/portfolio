@@ -1,50 +1,49 @@
 <script>
 	import { page } from '$app/stores';
 
-	let homeHover = 'visibility:hidden';
-	let workHover = 'visibility:hidden';
-	let resumeHover = 'visibility:hidden';
-	let contactHover = 'visibility:hidden';
+	let homeHover = true;
+	let workHover = true;
+	let resumeHover = true;
+	let contactHover = true;
 </script>
 
 <nav>
 	<a
 		href="/"
 		class="navlink {$page.url.pathname === '/' ? 'current' : ''}"
-		on:mouseenter={() => (homeHover = '')}
-		on:mouseleave={() => (homeHover = 'visibility:hidden')}
-		><span style={homeHover}>[</span>
+		on:mouseenter={() => (homeHover = false)}
+		on:mouseleave={() => (homeHover = true)}
+		><span class:hovering={homeHover}>[</span>
 		Home
-		<span style={homeHover}>]</span></a
+		<span class:hovering={homeHover}>]</span></a
 	>
 	<a
 		href="/work"
 		class="navlink {$page.url.pathname === '/work' ? 'current' : ''}"
-		on:mouseenter={() => (workHover = '')}
-		on:mouseleave={() => (workHover = 'visibility:hidden')}
-		><span style={workHover}>[</span>
+		on:mouseenter={() => (workHover = false)}
+		on:mouseleave={() => (workHover = true)}
+		><span class:hovering={workHover}>[</span>
 		Work
-		<span style={workHover}>]</span></a
+		<span class:hovering={workHover}>]</span></a
 	>
 	<a
 		href="/resume"
 		class="navlink {$page.url.pathname === '/resume' ? 'current' : ''}"
-		on:mouseenter={() => (resumeHover = '')}
-		on:mouseleave={() => (resumeHover = 'visibility:hidden')}
-		><span style={resumeHover}>[</span>
+		on:mouseenter={() => (resumeHover = false)}
+		on:mouseleave={() => (resumeHover = true)}
+		><span class:hovering={resumeHover}>[</span>
 		Resume
-		<span style={resumeHover}>]</span></a
+		<span class:hovering={resumeHover}>]</span></a
 	>
 	<a
 		href="/contact"
 		class="navlink {$page.url.pathname === '/contact' ? 'current' : ''}"
-		on:mouseenter={() => (contactHover = '')}
-		on:mouseleave={() => (contactHover = 'visibility:hidden')}
-		><span style={contactHover}>[</span>
+		on:mouseenter={() => (contactHover = false)}
+		on:mouseleave={() => (contactHover = true)}
+		><span class:hovering={contactHover}>[</span>
 		Contact me!
-		<span style={contactHover}>]</span></a
+		<span class:hovering={contactHover}>]</span></a
 	>
-
 	<!-- <span class="name">Ali A. Almiskeen</span> -->
 </nav>
 
@@ -94,5 +93,9 @@
 
 	.navlink:hover {
 		color: #414d38;
+	}
+
+	.hovering {
+		visibility: hidden;
 	}
 </style>

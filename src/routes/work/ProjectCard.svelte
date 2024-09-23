@@ -5,10 +5,22 @@
 	export let picture = Backup;
 	export let title = 'Not a project!';
 	export let types = ['ID', 'ME', 'CS'];
+	/**
+	 * @type {string[]}
+	 */
+	export let search = [];
+
+	let hidden = false;
+
+	for (let current of search) {
+		if (!types.includes(current)) {
+			hidden = true; // hide this card if the dicipline searched is not in this project
+		}
+	}
 </script>
 
 <a href="/work/#">
-	<div class="card">
+	<div class="card" class:hidden {title}>
 		<!-- svelte-ignore a11y-img-redundant-alt -->
 		<img src={picture} alt="project image" class="image" />
 
@@ -57,7 +69,7 @@
 	a {
 		text-decoration: none;
 	}
-	/* a:active {
-		color: black;
-	} */
+	.hidden {
+		display: none;
+	}
 </style>

@@ -3,7 +3,21 @@
 	import CategorySelector from './CategorySelector.svelte';
 	import { colorCodes } from '$lib/TagColors.js';
 
-	const categories = ['ME', 'ID', 'CS', 'EE'];
+	const categories = Object.keys(colorCodes);
+
+	/**
+	 * @type {string[]}
+	 */
+	let search = [];
+
+	// adds a dicipline to the search array to be used by each ProjectCard if the CategorySelector is clicked
+	function searchAdjustment(event) {
+		if (event.detail.selected) {
+			search = [...search, event.detail.category];
+		} else {
+			search = search.filter((e) => e !== event.detail.category);
+		}
+	}
 </script>
 
 <svelte:head>
@@ -15,20 +29,18 @@
 <div class="filter">
 	<span>Specify a dicipline: </span>
 	{#each categories as category}
-		<CategorySelector {category} />
+		<CategorySelector {category} on:selected={searchAdjustment} />
 	{/each}
 </div>
 
-<div class="container">
-	<ProjectCard />
-	<ProjectCard />
-	<ProjectCard />
-	<ProjectCard />
-	<ProjectCard />
-	<ProjectCard />
-	<ProjectCard />
-	<ProjectCard />
-</div>
+{#key search}
+	<div class="container">
+		<ProjectCard {search} types={['ME', 'CS']} />
+		<ProjectCard {search} types={['ME', 'ID']} />
+		<ProjectCard {search} types={['ME', 'EE', 'GD']} />
+		<ProjectCard {search} types={['EE', 'GD']} />
+	</div>
+{/key}
 
 <style>
 	.work-title {

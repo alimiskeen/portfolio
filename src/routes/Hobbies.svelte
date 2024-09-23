@@ -10,7 +10,9 @@
 
 <style>
 	.main {
-		margin-top: 4rem;
+		/* margin-top: 4rem; */
+		width: 100%;
 		text-align: center;
+		margin: 4rem auto;
 	}
 </style>

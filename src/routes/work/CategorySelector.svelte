@@ -1,8 +1,13 @@
 <script>
-	import { colorCodes } from '$lib/TagColors.js';
-	export let category = 'ME';
+	// @ts-nocheck
 
+	import { createEventDispatcher } from 'svelte';
+	import { colorCodes } from '$lib/TagColors.js';
+
+	export let category = 'ME';
 	export let selected = false;
+
+	const dispatch = createEventDispatcher();
 </script>
 
 <!-- svelte-ignore a11y-click-events-have-key-events -->
@@ -14,6 +19,7 @@
 		.secondaryColor}"
 	on:click={() => {
 		selected = !selected;
+		dispatch('selected', { category: category, selected: selected });
 	}}
 >
 	{colorCodes[category].name}

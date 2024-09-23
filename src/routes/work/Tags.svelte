@@ -1,15 +1,21 @@
 <script>
-	import { tagColors, colorCodes } from '$lib/TagColors.js';
+	// @ts-nocheck
+	import { colorCodes } from '$lib/TagColors.js';
 
 	export let Type = 'ID';
 </script>
 
-<div class="tag" style="background-color: {tagColors.get(Type) ? tagColors.get(Type) : 'white'};">
+<div
+	class="tag"
+	style="--main-color: {colorCodes[Type] ? colorCodes[Type].mainColor : 'white'};
+		   --secondary-color: {colorCodes[Type] ? colorCodes[Type].secondaryColor : 'black'};"
+>
 	<span class="tag-text">{Type}</span>
 </div>
 
 <style>
 	.tag {
+		background-color: var(--main-color);
 		bottom: 0;
 		height: 100%;
 		padding: 6px 6px 6px 6px;
@@ -21,6 +27,6 @@
 	.tag-text {
 		font-size: x-large;
 		user-select: none;
-		color: black !important;
+		color: var(--secondary-color) !important;
 	}
 </style>
