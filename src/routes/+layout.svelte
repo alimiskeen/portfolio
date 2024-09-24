@@ -1,4 +1,6 @@
 <script>
+	// @ts-nocheck
+
 	import { page } from '$app/stores';
 
 	let homeHover = true;
@@ -63,6 +65,7 @@
 		background-color: #fff8e8;
 		margin: 0;
 		font-family: 'Kode Mono', monospace;
+		overflow-x: hidden;
 	}
 
 	nav {

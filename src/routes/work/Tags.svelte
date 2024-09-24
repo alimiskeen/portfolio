@@ -2,15 +2,16 @@
 	// @ts-nocheck
 	import { colorCodes } from '$lib/TagColors.js';
 
-	export let Type = 'ID';
+	export let tag = 'ID';
 </script>
 
 <div
 	class="tag"
-	style="--main-color: {colorCodes[Type] ? colorCodes[Type].mainColor : 'white'};
-		   --secondary-color: {colorCodes[Type] ? colorCodes[Type].secondaryColor : 'black'};"
+	title={colorCodes[tag].name}
+	style="--main-color: {colorCodes[tag] ? colorCodes[tag].mainColor : 'white'};
+		   --secondary-color: {colorCodes[tag] ? colorCodes[tag].secondaryColor : 'black'};"
 >
-	<span class="tag-text">{Type}</span>
+	<span class="tag-text">{tag}</span>
 </div>
 
 <style>

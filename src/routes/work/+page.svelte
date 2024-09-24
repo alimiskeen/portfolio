@@ -1,9 +1,13 @@
 <script>
+	// @ts-nocheck
+
 	import ProjectCard from './ProjectCard.svelte';
 	import CategorySelector from './CategorySelector.svelte';
 	import { colorCodes } from '$lib/TagColors.js';
+	import { projects } from '$lib/projects/projectDatabase.js';
 
 	const categories = Object.keys(colorCodes);
+	const projectTitles = Object.keys(projects);
 
 	/**
 	 * @type {string[]}
@@ -35,10 +39,10 @@
 
 {#key search}
 	<div class="container">
-		<ProjectCard {search} types={['ME', 'CS']} />
-		<ProjectCard {search} types={['ME', 'ID']} />
-		<ProjectCard {search} types={['ME', 'EE', 'GD']} />
-		<ProjectCard {search} types={['EE', 'GD']} />
+		{#each projectTitles as project}
+			<ProjectCard {search} {...projects[project]} />
+		{/each}
+		<ProjectCard {search} />
 	</div>
 {/key}
 

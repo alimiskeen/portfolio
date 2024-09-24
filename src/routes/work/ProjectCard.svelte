@@ -1,10 +1,11 @@
 <script>
 	import Tags from './Tags.svelte';
-	import Backup from '$lib/robot.jpg';
 
-	export let picture = Backup;
+	export let url = '#';
+	export let picture = '/robot.jpg';
 	export let title = 'Not a project!';
-	export let types = ['ID', 'ME', 'CS'];
+	export let tags = ['ID', 'ME', 'CS'];
+
 	/**
 	 * @type {string[]}
 	 */
@@ -13,13 +14,13 @@
 	let hidden = false;
 
 	for (let current of search) {
-		if (!types.includes(current)) {
+		if (!tags.includes(current)) {
 			hidden = true; // hide this card if the dicipline searched is not in this project
 		}
 	}
 </script>
 
-<a href="/work/#">
+<a href="/work/{url}">
 	<div class="card" class:hidden {title}>
 		<!-- svelte-ignore a11y-img-redundant-alt -->
 		<img src={picture} alt="project image" class="image" />
@@ -27,8 +28,8 @@
 		<h3 class="title">{title}</h3>
 
 		<div class="tags">
-			{#each types as type}
-				<Tags Type={type} />
+			{#each tags as tag}
+				<Tags {tag} />
 			{/each}
 		</div>
 	</div>
@@ -51,6 +52,7 @@
 	}
 	.image {
 		width: 100%;
+		min-height: 100%;
 		position: absolute;
 		transform: translateX(-50%);
 		z-index: -1;
