@@ -8,7 +8,7 @@
 	</div>
 	<div id="resume">
 		<div id="education">
-			<h3>Education</h3>
+			<h3>Education (TODO: fix the border to seperate class with first child last child!)</h3>
 			<hr />
 			<p>
 				<b>B.S. Degree,</b> University of Utah, Salt Lake City, Utah
