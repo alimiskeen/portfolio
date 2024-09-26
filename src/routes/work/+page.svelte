@@ -62,9 +62,10 @@
 		width: 90%;
 	}
 	.filter {
-		height: 5rem;
 		width: 100%;
 		padding-left: 5rem;
+		padding-right: 5rem;
+		margin-bottom: 1rem;
 	}
 	span {
 		user-select: none;
