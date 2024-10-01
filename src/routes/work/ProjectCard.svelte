@@ -18,14 +18,21 @@
 			hidden = true; // hide this card if the dicipline searched is not in this project
 		}
 	}
+
+	let maxLength = 52;
+	var cardTitle = title;
+
+	if (title.length > maxLength) {
+		cardTitle = cardTitle.substring(0, maxLength) + '...';
+	}
 </script>
 
 <a href="/work/{url}">
 	<div class="card" class:hidden {title}>
 		<!-- svelte-ignore a11y-img-redundant-alt -->
-		<img src={picture} alt="project image" class="image" />
+		<img src={picture} alt="image" class="image" />
 
-		<h3 class="title">{title}</h3>
+		<h3 class="title">{cardTitle}</h3>
 
 		<div class="tags">
 			{#each tags as tag}
@@ -66,7 +73,7 @@
 	.title {
 		background-color: white;
 		color: black;
-		mix-blend-mode: screen;
+		/* mix-blend-mode: screen; */
 	}
 	a {
 		text-decoration: none;

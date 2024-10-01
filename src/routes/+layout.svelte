@@ -46,7 +46,7 @@
 		Contact me!
 		<span class:hovering={contactHover}>]</span></a
 	>
-	<!-- <span class="name">Ali A. Almiskeen</span> -->
+	<span class="name">Ali A. Almiskeen</span>
 </nav>
 
 <slot />
@@ -78,8 +78,9 @@
 	}
 
 	.name {
-		position: relative;
-		text-align: right;
+		float: right;
+		margin-right: 2em;
+		user-select: none;
 	}
 
 	.navlink,
