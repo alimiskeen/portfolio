@@ -42,7 +42,6 @@
 		{#each projectTitles as project}
 			<ProjectCard {search} {...projects[project]} />
 		{/each}
-		<ProjectCard {search} />
 	</div>
 {/key}
 

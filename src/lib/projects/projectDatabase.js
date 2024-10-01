@@ -47,7 +47,7 @@ export const projects = {
 	arms: {
 		url: 'arms',
 		title: 'Aluminum Extendable Arms',
-		tags: ['ME'],
+		tags: ['ME', 'MFE'],
 		picture: '/Designs-12.jpg',
 		page: Arms
 	},

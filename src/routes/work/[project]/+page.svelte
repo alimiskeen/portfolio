@@ -1,5 +1,6 @@
 <script>
 	import { colorCodes } from '$lib/TagColors.js';
+	import LargeTags from './LargeTags.svelte';
 	export let data;
 </script>
 
@@ -12,9 +13,8 @@
 	<h3>
 		this project utilizes
 		{#each data.tags as tag}
-			<span style="color: {colorCodes[tag].mainColor};">[{colorCodes[tag].name}]&nbsp;</span>
+			<LargeTags {tag} />
 		{/each}
-		Fix this formatting with better
 	</h3>
 </div>
 
