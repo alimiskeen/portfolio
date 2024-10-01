@@ -7,6 +7,7 @@
 	let workHover = true;
 	let resumeHover = true;
 	let contactHover = true;
+	let certHover = true;
 </script>
 
 <nav>
@@ -38,6 +39,15 @@
 		<span class:hovering={resumeHover}>]</span></a
 	>
 	<a
+		href="/certificates"
+		class="navlink {$page.url.pathname === '/contact' ? 'current' : ''}"
+		on:mouseenter={() => (certHover = false)}
+		on:mouseleave={() => (certHover = true)}
+		><span class:hovering={certHover}>[</span>
+		Certificates
+		<span class:hovering={certHover}>]</span></a
+	>
+	<a
 		href="/contact"
 		class="navlink {$page.url.pathname === '/contact' ? 'current' : ''}"
 		on:mouseenter={() => (contactHover = false)}
@@ -46,6 +56,7 @@
 		Contact me!
 		<span class:hovering={contactHover}>]</span></a
 	>
+
 	<span class="name">Ali A. Almiskeen</span>
 </nav>
 
