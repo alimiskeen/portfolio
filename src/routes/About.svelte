@@ -15,6 +15,9 @@
 		Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias et veritatis adipisci? Corrupti
 		iste eos rerum eius officia omnis doloribus maiores explicabo rem! Cum veritatis blanditiis dolore
 		temporibus, nam quae.
+		<br />
+		<br />
+		"Design and Engineering in conjunction can make functionality with unparalleled beauty"
 	</p>
 </div>
 
