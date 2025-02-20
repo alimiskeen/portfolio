@@ -11,7 +11,7 @@
 	style="--main-color: {colorCodes[tag] ? colorCodes[tag].mainColor : 'white'};
 		   --secondary-color: {colorCodes[tag] ? colorCodes[tag].secondaryColor : 'black'};"
 >
-	<span class="tag-text">{tag}</span>
+	<span class="tag-text">{colorCodes[tag].tag ? colorCodes[tag].tag : tag}</span>
 </div>
 
 <style>

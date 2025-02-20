@@ -11,5 +11,6 @@ export const colorCodes = {
 	CS: { name: 'Computer Science', mainColor: 'green', secondaryColor: 'white' },
 	EE: { name: 'Electrical Engineering', mainColor: 'rgb(224, 205, 28)', secondaryColor: 'black' },
 	GD: { name: 'Graphic Design', mainColor: 'purple', secondaryColor: 'white' },
-	MFE: { name: 'Manufacturing Engineering', mainColor: 'red', secondaryColor: 'white' }
+	MFE: { name: 'Manufacturing Engineering', mainColor: 'red', secondaryColor: 'white' },
+	BLZ: { name: '🚀 Blitz Design', mainColor: 'rgb(0, 255, 0)', secondaryColor: 'black', tag: "🚀" }
 };

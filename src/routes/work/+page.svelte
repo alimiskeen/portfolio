@@ -26,6 +26,8 @@
 
 <svelte:head>
 	<title>Ali's Work</title>
+	<meta property='og:title' content="Ali Almiskeen's Projects" />
+	<meta property='og:description' content="a page with some of Ali Almiskeen's projects and design work." />
 </svelte:head>
 
 <h1 class="work-title">Work and Design</h1>

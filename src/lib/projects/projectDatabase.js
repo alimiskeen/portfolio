@@ -33,7 +33,7 @@ export const projects = {
 	charger: {
 		url: 'charger',
 		title: 'Wireless Charger phone stand',
-		tags: ['ME', 'ID'],
+		tags: ['ME', 'ID', 'BLZ'],
 		picture: '/20230523_220003.jpg',
 		page: Charger
 	},
